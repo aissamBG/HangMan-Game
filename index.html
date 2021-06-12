@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Hang Man</title>
+</head>
+
+<body>
+    <!-- Head -->
+    <div class="head">
+        <div class="container">
+            <div class="head-name">Hangman</div>
+            <img class="img" src="images/hng.png">
+            <div class="head-word">Word from: <span></span></div>
+        </div>
+    </div>
+    <!-- ./Head -->
+    <hr>
+    </hr>
+    <!-- Hang-man -->
+    <div class="hang-man">
+        <div class="container">
+            <div class="hangman-draw">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div class="bar4"></div>
+                <div class="rope"></div>
+                <div class="man">
+                    <div class="head"></div>
+                    <div class="body"></div>
+                    <div class="hands"></div>
+                    <div class="legs"></div>
+                </div>
+            </div>
+            <div class="keyword">
+                <span>A</span>
+                <span>B</span>
+                <span>C</span>
+                <span>D</span>
+                <span>E</span>
+                <span>F</span>
+                <span>G</span>
+                <span>H</span>
+                <span>I</span>
+                <span>G</span>
+                <span>K</span>
+                <span>L</span>
+                <span>M</span>
+                <span>N</span>
+                <span>O</span>
+                <span>P</span>
+                <span>Q</span>
+                <span>R</span>
+                <span>S</span>
+                <span>T</span>
+                <span>U</span>
+                <span>V</span>
+                <span>W</span>
+                <span>X</span>
+                <span>Y</span>
+                <span>Z</span>
+            </div>
+        </div>
+    </div>
+    <!-- ./Hang-man -->
+    <hr>
+    </hr>
+    <!-- Guess-word -->
+    <div class="container">
+        <div class="guess-word">
+        </div>
+    </div>
+    <!-- ./Guess-word -->
+    <!-- button -->
+    <button class="btn">Replay</button>
+    <!-- ./button -->
+    <!-- Audio -->
+    <audio id="success" src="audio/success.mp3" preload></audio>
+    <audio id="success2" src="audio/success2.mp3" preload></audio>
+    <audio id="fail" src="audio/fail.mp3" preload></audio>
+    <audio id="fail2" src="audio/fail2.mp3" preload></audio>
+    <!-- ./Audio -->
+    <!-- Game-Over -->
+    <div class="game-over"></div>
+    <!-- ./Game-Over -->
+
+    <script src="main.js"></script>
+</body>
+
+</html>

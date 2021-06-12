@@ -1,0 +1,451 @@
+/* Global */
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FF9000;
+}
+.container{
+    width: 75%;
+    margin:auto;
+}
+hr{
+    margin-top: 10px;
+    width: 75%;
+    border:1px solid #BAFF34
+}
+/* Head */
+.head{
+    overflow: hidden;
+    height: 60px;
+}
+.head-name{
+    float: left;
+    margin-top: 0px;
+    font-size: 40px;
+    font-weight: 800;
+}
+ .img{
+    width: 130px;
+    height: 70px;
+    position: absolute;
+    left: calc(50% - 65px);
+}
+.head-word{
+    float: right;
+    font-weight:bold;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.head-word span{
+    font-weight: 800;
+    color:#FF2D00;
+}
+@media (max-width:830px){
+    .head{
+        height: 65px;
+    }
+    .img{
+    position: static;
+    float: left;
+    }
+    .head-name{
+        display: none;
+    }    
+}
+@media (max-width:571px){
+    .img{
+        width: 50px;
+        height: 60px;
+        position: static;
+        float: left;
+        }
+    .head-word{
+        float: right;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+}
+@media (max-width:315px){
+    .head{
+        overflow: hidden;
+        height: auto;
+    }    
+    .img{
+        display: none;
+        }
+
+    .head-word{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
+/* Hangman */
+.hangman-draw{
+    width:50%;
+    height: 340px;
+    background-color:#535923;
+    float: left;
+    position: relative;
+}
+.hangman-draw .bar1{
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: #000;
+    margin: auto;
+    bottom: 25px;
+    left: calc(50% - 30px);
+    display: none;
+}
+.hangman-draw .bar2{
+    width: 4px;
+    height: 280px;
+    background-color: #000;
+    position: absolute;
+    bottom: 29px;
+    left:calc(50% - 2px);
+    display: none;
+}
+.hangman-draw .bar3{
+    width: 110px;
+    height: 4px;
+    position: absolute;
+    background-color: #000;
+    top: 45px;
+    left: calc(50% + 2px);
+    display: none;
+}
+.hangman-draw .bar4{
+    width: 4px;
+    height: 40px;
+    background-color: #000;
+    position: absolute;
+    top: 49px;
+    left: calc(50% + 108px);
+    display: none;
+}
+.hangman-draw .rope{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 4px dashed #000;
+    position: absolute;
+    top:89px;
+    left:calc(50% + 75px);
+    display: none;
+}
+.hangman-draw .man .head{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: transparent;
+    border:4px solid #000;
+    position: absolute;
+    top:98px ;
+    left:calc(50% + 84px);
+    display: none;
+}
+.hangman-draw .man .body{
+    width:4px;
+    height: 100px;
+    background-color: #000;
+    position: absolute;
+    top: 150px;
+    left: calc(50% + 108px);
+    display: none;
+}
+.hangman-draw .man .hands{
+    display: none;
+}
+.hangman-draw .man .hands::before{
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #000;
+    position:absolute;
+    top:50%;
+    left: calc(50% + 50px);
+    transform: rotate(20deg);
+}
+.hangman-draw .man .hands::after{
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #000;
+    position:absolute;
+    top:50%;
+    left: calc(50% + 110px);
+    transform: rotate(-20deg);
+}
+.hangman-draw .man .legs{
+    display: none;
+}
+.hangman-draw .man .legs::before{
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #000;
+    position:absolute;
+    top:75%;
+    left: calc(50% + 52px);
+    transform: rotate(-20deg);
+}
+.hangman-draw .man .legs::after{
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #000;
+    position:absolute;
+    top:75%;
+    left: calc(50% + 108px);
+    transform: rotate(20deg);
+}
+.keyword{
+    width: 50%;
+    height: 350px;
+    padding: 10px;
+    float: left;
+    text-align: center;
+}
+.keyword span{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background-color: #385815;
+    text-align: center;
+    color: #0AFF18;
+    font-weight: bold;
+    font-size:24px;
+    line-height: 55px;
+    margin: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.keyword span.clicked{
+    background-color: #268f754d;
+}
+@media (max-width:1170px){
+    .keyword span{
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 20px;
+    }
+}
+@media (max-width:991px){
+    .hangman-draw{
+        width: 60%;
+    }
+    .keyword{
+        width: 40%;
+    }
+    .keyword span{
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 18px;
+    }
+    .hangman-draw .bar1{
+        left: calc(50% - 110px);
+    }
+    .hangman-draw .bar2{
+        left:calc(50% - 82px);
+    }
+    .hangman-draw .bar3{
+        left: calc(50% - 78px);
+    }
+    .hangman-draw .bar4{
+        left: calc(50% + 28px);
+    }
+    .hangman-draw .rope{
+        left:calc(50% - 5px);
+    }
+    .hangman-draw .man .head{
+        left:calc(50% + 4px);
+    }
+    .hangman-draw .man .body{
+        left: calc(50% + 28px);
+    }
+    .hangman-draw .man .hands::before{
+        content: "";
+        left: calc(50% - 30px);
+    }
+    .hangman-draw .man .hands::after{
+        content: "";
+        left: calc(50% + 30px);
+    }
+    .hangman-draw .man .legs::before{
+        content: "";
+        left: calc(50% - 28px);
+    }
+    .hangman-draw .man .legs::after{
+        content: "";
+        left: calc(50% + 28px);
+    }
+}
+@media (max-width:571px){
+    .hangman-draw{
+        width:100%;
+        height: 340px;
+        background-color:#535923;
+        position: relative;
+    }
+    .keyword{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }    
+    .keyword span{
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        background-color: #385815;
+        text-align: center;
+        color: #0AFF18;
+        font-weight: bold;
+        font-size:24px;
+        line-height: 45px;
+        margin: 5px;
+        cursor: pointer;
+        user-select: none;
+    }    
+}
+/* Guess-word */
+.guess-word{
+    width: 100%;
+    height: 100px;
+    background-color: #D96704;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.guess-word span{
+    width: 45px;
+    height: 45px;
+    background-color: #4F5902;
+    border-bottom: 3px solid #95A617;
+    margin-right: 5px;
+    color: #008869;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 45px;
+}
+.guess-word .empty{
+    display: inline-block;
+    width: 25px;
+    height: 4px;
+    background-color: #95A617;
+    margin-bottom: 10px;
+}
+@media (max-width:1245px){
+    .guess-word{
+        height: 70px;
+    }
+    .guess-word span{
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .guess-word .empty{
+        width: 20px;
+        height: 3px;
+    }
+}
+
+@media (max-width:991px){
+    .guess-word{
+        height: 50px;
+        padding-top:15px;
+    }
+    .guess-word span{
+        width: 22px;
+        height: 22px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .guess-word .empty{
+        width: 16px;
+        height: 2px;
+    }
+
+}
+@media (max-width:768px){
+    .guess-word{
+        height: 40px;
+        padding-top: 10px;
+    }
+    .guess-word span{
+        width: 18px;
+        height: 18px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .guess-word .empty{
+        width: 14px;
+        height: 1px;
+        margin-bottom: 8px;
+    }
+}
+@media (max-width:571px){
+    .guess-word{
+        height: 30px;
+        padding-top: 8px;
+    }
+
+    .guess-word span{
+        width: 13px;
+        height: 13px;
+        font-size: 12px;
+        line-height: 13px;
+    }
+    .guess-word .empty{
+        width: 10px;
+        height: 1px;
+        margin-bottom: 5px;
+    }
+}
+/* button */
+.btn{
+    display: block;
+    margin:20px auto 0;
+    width: 150px;
+    padding:10px 15px;
+    background-color: #BF3604;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.btn:hover{
+    background-color: #bf36048c;
+    color:#BF3604;
+}
+/* Game-Over*/
+.game-over{
+    width:70%;
+    height: auto;
+    background-color: #bbff34c5;
+    border: 2px solid #FF2D00;
+    color: #FF2D00;
+    font-size: 42px;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.game-over span{
+    font-weight: 800;
+}
+/* ./Game-Over*/
